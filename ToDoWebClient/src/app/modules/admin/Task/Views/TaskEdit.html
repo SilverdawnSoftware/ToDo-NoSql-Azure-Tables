@@ -1,0 +1,74 @@
+<!-- ALLOWOVERWRITE-E6B28CDCBE3DD606ED04EDA7B6B3BB78 -->
+
+
+ <form [formGroup]="taskForm" class="form-horizontal css-form" role="form" (ngSubmit)="update()">
+        <mat-tab-group >        	
+        	 <mat-tab label="Main">        	 
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+	    	            	    				
+                         <mat-form-field>                            
+                                <input matInput formControlName="completedDate" id="taskCompletedDate" type="date" placeholder="CompletedDate"  required/>
+						</mat-form-field>                       
+                        
+
+        	 			</div>
+        	 		</div>
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+	    	            	    				
+                         <mat-form-field>                            
+                                <input matInput formControlName="dueDate" id="taskDueDate" type="date" placeholder="DueDate"  required/>
+						</mat-form-field>                       
+                        
+
+        	 			</div>
+        	 		</div>
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+	    	            	    				
+                         <mat-form-field>                            
+                                <input matInput formControlName="name" id="taskName" type="text" placeholder="Name"  required/>
+						</mat-form-field>                       
+                        
+
+        	 			</div>
+        	 		</div>
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+	    	            	    				
+                         <mat-form-field>                            
+                                <input matInput formControlName="startedDate" id="taskStartedDate" type="date" placeholder="StartedDate"  required/>
+						</mat-form-field>                       
+                        
+
+        	 			</div>
+        	 		</div>
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+	    	            	    				
+                         <mat-form-field>                            
+                                <input matInput formControlName="status" id="taskStatus" type="number" placeholder="Status"  required/>
+						</mat-form-field>                       
+                        
+
+        	 			</div>
+        	 		</div>
+        	 		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+        	 			<div fxFlex>	
+
+        	 			</div>
+        	 		</div>
+        	 
+			 </mat-tab>
+
+        	 
+    	
+        	 
+        	 
+        	 </mat-tab-group>
+   <div style="padding-top: 10px;">
+	    <button mat-raised-button color="primary" ng-click="save()">Save</button>
+   </div>
+        	 
+   </form>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
+             x:Class="ToDoMobile.Views.User.UserIndexPage" Title="User">
+             
+   <ContentPage.BindingContext>
+    <viewModels:UserIndexViewModel/>
+	</ContentPage.BindingContext>
+  <StackLayout Orientation="Vertical" Margin="10">      
+	  <ListView ItemsSource="{Binding UserViews}"
+	            ItemTapped="Handle_ItemTapped"
+	            CachingStrategy="RecycleElement"
+	            RowHeight="60">
+	            
+	    <!--Built in Cells-->
+	    <!--<ListView.ItemTemplate>
+	      <DataTemplate>
+	        <TextCell />
+	      </DataTemplate>
+	    </ListView.ItemTemplate>-->
+	    
+	    <!--Custom View Cells-->
+	    
+	    <ListView.ItemTemplate>
+	      <DataTemplate>
+	        <ViewCell>
+	          <StackLayout Orientation="Vertical">
+	          	<Label Text="{Binding AddressLine1}" FontSize="Medium" />
+	          	<StackLayout Orientation="Horizontal">
+	                    <Label Text="{Binding AddressLine2}" FontSize="Small" />      
+	                    <Label Text="{Binding City}" FontSize="Small" />      
+	                    <Label Text="{Binding Company}" FontSize="Small" />      
+	                    <Label Text="{Binding Country}" FontSize="Small" />      
+	                    <Label Text="{Binding Department}" FontSize="Small" />      
+	                    <Label Text="{Binding Email}" FontSize="Small" />      
+	                    <Label Text="{Binding FirstName}" FontSize="Small" />      
+	                    <Label Text="{Binding HomeNumber}" FontSize="Small" />      
+	                    <Label Text="{Binding MobileNumber}" FontSize="Small" />      
+	                    <Label Text="{Binding Postcode}" FontSize="Small" />      
+	                    <Label Text="{Binding Surname}" FontSize="Small" />      
+	                    <Label Text="{Binding Title}" FontSize="Small" />      
+	                    <Label Text="{Binding UserId}" FontSize="Small" />      
+	                    <Label Text="{Binding WorkNumber}" FontSize="Small" />      
+
+	          	</StackLayout>
+			  </StackLayout>
+			</ViewCell>
+	      </DataTemplate>
+	    </ListView.ItemTemplate>    
+	  </ListView>
+     <Button Margin="10" WidthRequest="100"  Text="Add User"  BackgroundColor="CornflowerBlue" TextColor="White"  Command="{Binding AddUserCommand}"></Button>
+  </StackLayout>
+</ContentPage>
+<!-- ALLOWOVERWRITE-52CB11D3F5BE9BEBABA8F14CC9EB8852 -->

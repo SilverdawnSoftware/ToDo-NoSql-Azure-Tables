@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
+             x:Class="ToDoMobile.Views.Task.TaskEditPage" Title="Task List">
+    <ContentPage.BindingContext>
+        <viewModels:TaskEditViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Margin="10">
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="CompletedDate: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="completedDate" Text="{Binding CompletedDate}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="DueDate: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="dueDate" Text="{Binding DueDate}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Name: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="name" Text="{Binding Name}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="StartedDate: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="startedDate" Text="{Binding StartedDate}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Status: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="status" Text="{Binding Status}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+            
+          		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="TaskId: " HorizontalOptions="Start" TextColor="DarkGray" Margin="0,10,10,0"  WidthRequest="100"/>
+                    <Entry x:Name="taskId" Text="{Binding TaskId}" BackgroundColor="White" HorizontalOptions="FillAndExpand" ></Entry>
+                </StackLayout>
+               
+            
+             
+
+             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Button Text="Cancel" WidthRequest="120" Margin="10" Command="{Binding CancelCommand}" HorizontalOptions="Start" BackgroundColor="Red" TextColor="White"></Button>
+                    <Button Text="Save"  WidthRequest="120"  Margin="10" BackgroundColor="CornflowerBlue" TextColor="White" Command="{Binding SaveCommand}" HorizontalOptions="EndAndExpand" ></Button>
+              </StackLayout>           
+         </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
+<!-- ALLOWOVERWRITE-121F1C414EF8A19EE2ABE8CD90DF9810 -->

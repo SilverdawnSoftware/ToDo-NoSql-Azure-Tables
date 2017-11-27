@@ -1,0 +1,53 @@
+<!-- ALLOWOVERWRITE-3798D97FBB5C135DA7DBC2D47FF03184 -->
+
+<div class="app-datatable">
+<ngx-datatable
+  class='material'
+  [rows]='rows'
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="45"
+  [scrollbarV]="true"
+  [limit]="10"
+  (page)="onPage($event)" style="width: 100%; height: 100%; position: relative" >
+  <ngx-datatable-column name="AddressLine1" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="AddressLine2" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="City" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Company" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Country" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Department" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Email" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="FirstName" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="HomeNumber" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="MobileNumber" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Postcode" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Surname" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="Title" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="UserId" width="300"></ngx-datatable-column> 
+  <ngx-datatable-column name="WorkNumber" width="300"></ngx-datatable-column> 
+  
+  <ngx-datatable-column name="Edit" width="300" prop="userId">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+      <button mat-icon-button	routerLink="/admin/user/edit/{{value}}" color="primary"><mat-icon>edit</mat-icon></button>
+
+    </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Delete" width="300" prop="userId">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <button mat-icon-button	(click)="delete(value)" color="warn"><mat-icon>delete</mat-icon></button>
+
+      </ng-template>
+    </ngx-datatable-column>
+  
+  
+</ngx-datatable>
+
+<a mat-raised-button color="primary" href="/admin/user/add">Add User</a>
+
+</div>
+
+
+
+
+

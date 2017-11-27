@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
+             x:Class="ToDoMobile.Views.Task.TaskIndexPage" Title="Task">
+             
+   <ContentPage.BindingContext>
+    <viewModels:TaskIndexViewModel/>
+	</ContentPage.BindingContext>
+  <StackLayout Orientation="Vertical" Margin="10">      
+	  <ListView ItemsSource="{Binding TaskViews}"
+	            ItemTapped="Handle_ItemTapped"
+	            CachingStrategy="RecycleElement"
+	            RowHeight="60">
+	            
+	    <!--Built in Cells-->
+	    <!--<ListView.ItemTemplate>
+	      <DataTemplate>
+	        <TextCell />
+	      </DataTemplate>
+	    </ListView.ItemTemplate>-->
+	    
+	    <!--Custom View Cells-->
+	    
+	    <ListView.ItemTemplate>
+	      <DataTemplate>
+	        <ViewCell>
+	          <StackLayout Orientation="Vertical">
+	          	<Label Text="{Binding CompletedDate}" FontSize="Medium" />
+	          	<StackLayout Orientation="Horizontal">
+	                    <Label Text="{Binding DueDate}" FontSize="Small" />      
+	                    <Label Text="{Binding Name}" FontSize="Small" />      
+	                    <Label Text="{Binding StartedDate}" FontSize="Small" />      
+	                    <Label Text="{Binding Status}" FontSize="Small" />      
+	                    <Label Text="{Binding TaskId}" FontSize="Small" />      
+
+	          	</StackLayout>
+			  </StackLayout>
+			</ViewCell>
+	      </DataTemplate>
+	    </ListView.ItemTemplate>    
+	  </ListView>
+     <Button Margin="10" WidthRequest="100"  Text="Add Task"  BackgroundColor="CornflowerBlue" TextColor="White"  Command="{Binding AddTaskCommand}"></Button>
+  </StackLayout>
+</ContentPage>
+<!-- ALLOWOVERWRITE-F79FEAD23DB3DC0875D8674D9493BBAC -->

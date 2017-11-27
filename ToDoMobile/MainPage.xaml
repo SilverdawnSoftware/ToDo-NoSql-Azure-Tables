@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ToDoMobile"
+             x:Class="ToDoMobile.MainPage" BackgroundColor="AliceBlue">
+    <Frame CornerRadius="10"  BackgroundColor="White" Margin="10">
+    <StackLayout VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="White" >
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                <Button Text="View Users" Clicked="Users_Clicked" Margin="10,10,0,0" BackgroundColor="White" TextColor="CornflowerBlue"></Button>
+                <Label HorizontalOptions="EndAndExpand" Text=">" Margin="10,20,0,0"></Label>
+            </StackLayout>
+            <BoxView Color="LightBlue" HeightRequest="1"> </BoxView>
+    </StackLayout>
+    </Frame>
+</ContentPage>
