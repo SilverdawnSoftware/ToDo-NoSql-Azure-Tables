@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-F186E4D67CFCF72C7B034F39BA2B5F38
+// ALLOWOVERWRITE-195F16E3864DC6DD296E7D2CB5503FFC
 
 import { Component,OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
@@ -84,9 +84,8 @@ import {TaskService} from "../Services/TaskService";
           }
           else
           {
-          
-          
-            this.taskService.add(taskModel).then(value => this.router.navigateByUrl("/admin/task/edit/"+value.taskId));
+      		  taskModel.userUserId=this.userUserId;
+              this.taskService.add(taskModel).then(value => this.router.navigateByUrl("/admin/task/edit/"+value.taskId));
           }
       }
 

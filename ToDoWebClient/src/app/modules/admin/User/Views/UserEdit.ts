@@ -93,9 +93,7 @@ import {TaskService} from "../../Task/Services/TaskService"
           }
           else
           {
-          
-          
-            this.userService.add(userModel).then(value => this.router.navigateByUrl("/admin/user/edit/"+value.userId));
+              this.userService.add(userModel).then(value => this.router.navigateByUrl("/admin/user/edit/"+value.userId));
           }
       }
 

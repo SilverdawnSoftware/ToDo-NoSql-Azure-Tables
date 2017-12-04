@@ -5,6 +5,8 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
     <AssemblyName>ToDoMobile</AssemblyName>
     <RootNamespace>ToDoMobile</RootNamespace>
+    <AssemblyVersion>2017.12.4.0</AssemblyVersion>
+    <FileVersion>2017.12.4.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-063115445F7E6EB28E66F4380F9396CC
+// ALLOWOVERWRITE-F1E727484972A4B9221D871ABE8EC0C7
 
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace ToDoRestAPI
             return await view.Get(userId);            
         }
     
-    
+        
     	 /// <summary>
         /// Add New User
         /// </summary>	
@@ -52,13 +52,16 @@ namespace ToDoRestAPI
     	[HttpPost]
         public async Task<viewModel.UserView> Add([FromBody]transModel.UserAdd add)
         {
-            var addTrans=new trans.UserTransactions();            
-            return await addTrans.Add(add);            
+            var addTrans=new trans.UserTransactions(); 
+            var result=await addTrans.Add(add);
+            return (viewModel.UserView) result;
         }
         
+      
          /// <summary>
         /// Update User By UserId
         /// </summary>	
+       
         
         //Update  User
     	[Route("api/User/{userId}")]
@@ -66,8 +69,10 @@ namespace ToDoRestAPI
         public async Task<viewModel.UserView> Update([FromRoute]int userId,[FromBody]transModel.UserUpdate update)
         {
         	update.UserId = userId;
-            var updateTrans=new trans.UserTransactions();            
-            return await updateTrans.Update(update);            
+            var updateTrans=new trans.UserTransactions();
+            var result=await updateTrans.Update(update);
+            return (viewModel.UserView) result;
+                     
         }
         
          /// <summary>

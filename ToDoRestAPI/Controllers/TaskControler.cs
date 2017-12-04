@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-68B5828EA6145B44B76EA13F93942F5D
+// ALLOWOVERWRITE
 
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace ToDoRestAPI
             return await view.Get(taskId);            
         }
     
-    
+        
     	 /// <summary>
         /// Add New Task
         /// </summary>	
@@ -52,13 +52,16 @@ namespace ToDoRestAPI
     	[HttpPost]
         public async Task<viewModel.TaskView> Add([FromBody]transModel.TaskAdd add)
         {
-            var addTrans=new trans.TaskTransactions();            
-            return await addTrans.Add(add);            
+            var addTrans=new trans.TaskTransactions(); 
+            var result=await addTrans.Add(add);
+            return (viewModel.TaskView) result;
         }
         
+      
          /// <summary>
         /// Update Task By TaskId
         /// </summary>	
+       
         
         //Update  Task
     	[Route("api/Task/{taskId}")]
@@ -66,8 +69,10 @@ namespace ToDoRestAPI
         public async Task<viewModel.TaskView> Update([FromRoute]int taskId,[FromBody]transModel.TaskUpdate update)
         {
         	update.TaskId = taskId;
-            var updateTrans=new trans.TaskTransactions();            
-            return await updateTrans.Update(update);            
+            var updateTrans=new trans.TaskTransactions();
+            var result=await updateTrans.Update(update);
+            return (viewModel.TaskView) result;
+                     
         }
         
          /// <summary>
@@ -92,13 +97,21 @@ namespace ToDoRestAPI
 		
 		[Route("api/User/{UserId}/Tasks")]
     	 [HttpGet]
-        public async Task<List<viewModel.TaskView>> GetTasksForUser(int userId)		
+        public async Task<List<viewModel.TaskView>> GetTasksForUser([FromRoute]int userId)		
     	{
     		 var view=new views.TaskViews();            
             return await view.GetTasksForUser(userId); 
     	
     	}
     	
+    
+    
+    	
+    	
+    	
+    	
+    	
+		    	
         
     }
 }

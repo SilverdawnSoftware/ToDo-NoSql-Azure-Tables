@@ -67,21 +67,14 @@ namespace ToDo.Views.Model
     	{
     	 var result=new TaskView();
     	 
-	    	result.CompletedDate = item.CompletedDate;     
-	    	result.DueDate = item.DueDate;     
+	    	//result.CompletedDate = item.CompletedDate;     
+	    //	result.DueDate = item.DueDate;     
 	    	result.Name = item.Name;     
-	    	result.StartedDate = item.StartedDate;     
+	    	//result.StartedDate = item.StartedDate;     
 	    	result.Status = item.Status;     
-	    	result.TaskId = item.TaskId;     
-    	
-if (item.User != null) 
-			    			{   
-		    		   result.UserUserId=item.User.UserId;
-		    		   } 
-		    		if (item.User != null) 
-			    			{   	
-		    			result.UserEmail=item.User.Email; 
-		    			} 
+	    	result.TaskId = item.TaskId;
+	        result.UserUserId = item.UserUserId;
+
     	
     	
     	return result;
