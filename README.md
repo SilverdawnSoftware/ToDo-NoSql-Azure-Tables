@@ -24,7 +24,7 @@ Going forward we will also use this sample application to demonstrate more advan
 In this section, I will explain the architecture used to create the sample application. As much as possible the application has been written with open source technologies such as Microsofts. Net Core Framework.
 
 Firstly let us look at a diagram of the Todo Application Architecture and all the software layers within it.
-<p id="crsExPx"><img class="alignnone size-full wp-image-1017 " src="https://www.silverdawnsoftware.com/wp-content/uploads/2017/09/img_59ba61b1797ec.png" alt="" /></p>
+<p id="crsExPx"><img class="alignnone size-full wp-image-1017 " src="Todo Azure Tables Architechure.png" alt="" /></p>
 
 <h2>Application Layers</h2>
 Now I will explain the different layers in the application and how the code generators work together.
