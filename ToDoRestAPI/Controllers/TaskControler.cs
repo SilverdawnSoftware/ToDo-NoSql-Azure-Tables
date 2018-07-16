@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE
+// ALLOWOVERWRITE-DFD3BF33F30B43555659552E80DE84B6
 
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using viewModel =ToDo.Views.Model;
 using views =ToDo.Views;
 using database = ToDo.Database;
 
-namespace ToDoRestAPI
+namespace 
 {
 
 	
@@ -103,13 +103,6 @@ namespace ToDoRestAPI
             return await view.GetTasksForUser(userId); 
     	
     	}
-    	
-    
-    
-    	
-    	
-    	
-    	
     	
 		    	
         

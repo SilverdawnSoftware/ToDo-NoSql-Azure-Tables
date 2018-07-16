@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-551403954C97542BED3099B1ABCFCC69
+// ALLOWOVERWRITE-C2FE1AA383B15B62DFEE939A7F404C96
 
 using System;
 using System.Collections.Generic;
@@ -63,12 +63,6 @@ namespace ToDo.Views.Model
                       /// </summary>
                       [DataMember(Name = "userUserId")]
 					  public  int UserUserId { get; set; }   
-					  
-					  /// <summary>
-                      /// Reference to  User Email Property
-                      /// </summary>
-				      [DataMember(Name = "userEmail")]                      
-					  public string UserEmail { get; set; }   
     	
     	
     	

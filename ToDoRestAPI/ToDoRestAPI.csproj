@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RootNamespace>ToDoRestAPI</RootNamespace>
-    <AssemblyVersion>2017.12.4.0</AssemblyVersion>
-    <FileVersion>2017.12.4.0</FileVersion>
+    <AssemblyVersion>2018.1.7.0</AssemblyVersion>
+    <FileVersion>2018.1.7.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />

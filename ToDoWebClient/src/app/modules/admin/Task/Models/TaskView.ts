@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-C3273BADD266A6B39F944DC297BADD58
+// ALLOWOVERWRITE-A611BD577A147A0AFC726674130AC185
 
 
     export interface ITaskView {
@@ -9,7 +9,6 @@
       status: number;    	
       taskId: number;    	
 
-					    userEmail : string;   
 					    userUserId : number;   
     }
     
@@ -21,7 +20,6 @@
       status: number;    	
       taskId: number;    	
 
-					    userEmail : string;   
 					    userUserId : number ;   
 
 
