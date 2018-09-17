@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-32091EDE62D983DB4BF5355B815946EE
+// ALLOWOVERWRITE-4183B793CB6E8FE29032F13BC273743F
 
 using System;
 using System.Collections.Generic;
@@ -18,48 +18,43 @@ namespace ToDo.Views.Model
 	    	
 	    	/// <summary>
             /// The data the task was completed
-            /// </summary>	
+            /// </summary>
 	    	public DateTime  CompletedDate  { get; set; } 	    	
 	    	
 	    	
 	    	/// <summary>
             /// When the task needs to be completed by
-            /// </summary>	
+            /// </summary>
 	    	public DateTime  DueDate  { get; set; } 	    	
 	    	
 	    	
 	    	/// <summary>
             /// The name of the task to be done
-            /// </summary>	
+            /// </summary>
 	    	public string  Name  { get; set; } 	    	
 	    	
 	    	
 	    	/// <summary>
             /// When the task was started
-            /// </summary>	
+            /// </summary>
 	    	public DateTime  StartedDate  { get; set; } 	    	
 	    	
 	    	
 	    	/// <summary>
             /// The status of the task e.g, Inprogress, Completed
-            /// </summary>	
+            /// </summary>
 	    	public int  Status  { get; set; } 	    	
 	    	
 	    	
 	    	/// <summary>
             /// Unique identifier for a task
-            /// </summary>	
+            /// </summary>
 	    	public int  TaskId  { get; set; } 	    	
     						  
 					   /// <summary>
                       /// Reference of PrimaryKey for User
                       /// </summary>
 					  public  int UserUserId { get; set; }   
-					  
-					  /// <summary>
-                      /// Reference to  User Email Property
-                      /// </summary>	
-					  public string UserEmail { get; set; }   
     	
     	
     	
@@ -67,14 +62,17 @@ namespace ToDo.Views.Model
     	{
     	 var result=new TaskView();
     	 
-	    	//result.CompletedDate = item.CompletedDate;     
-	    //	result.DueDate = item.DueDate;     
+	    	result.CompletedDate = item.CompletedDate;     
+	    	result.DueDate = item.DueDate;     
 	    	result.Name = item.Name;     
-	    	//result.StartedDate = item.StartedDate;     
+	    	result.StartedDate = item.StartedDate;     
 	    	result.Status = item.Status;     
-	    	result.TaskId = item.TaskId;
-	        result.UserUserId = item.UserUserId;
-
+	    	result.TaskId = item.TaskId;     
+    	
+if (item.User != null) 
+			    			{   
+		    		   result.UserUserId=item.User.UserId;
+		    		   } 
     	
     	
     	return result;

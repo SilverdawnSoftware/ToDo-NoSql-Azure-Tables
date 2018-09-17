@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-F5936D9A243816DB17BA4803247337CD
+// ALLOWOVERWRITE-0C4C89CC18BFCC5EE88ADF24483E03E7
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +7,13 @@ using ToDo.Database;
 
 namespace ToDo.Database
 {
-    public partial class  : DbContext
+    public partial class ToDoDbContext : DbContext
     {
     
         public DbSet<User> Users { get; set; } 
         public DbSet<Task> Tasks { get; set; } 
      
-
+	
 	
 
 

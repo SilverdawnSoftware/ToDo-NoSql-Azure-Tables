@@ -22,7 +22,7 @@ export class UserService {
 
 
 
-  baseURL: string='http://localhost:7071';
+  baseURL: string='http://tododotnet.lan:9271';
 
   getAll(): Promise<UserView[]> {
     return this.http.get(this.baseURL + `/api/User/All`)

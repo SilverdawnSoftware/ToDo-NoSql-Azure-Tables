@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-62691F26CA15B485A2F28C9EBC83F6D4
+// ALLOWOVERWRITE-773922FCAE096FBF01F2020EAA082B23
 
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Silverdawn.Exceptions;
+using Microsoft.WindowsAzure.Storage.Table;
 using ToDo.Transactions.Model;
 using ToDo.Views.Model;
 using data = ToDo.Database;
@@ -15,141 +16,106 @@ namespace ToDo.Transactions
 {
  public partial class TaskTransactions
  {
-     
- 
- 		// Add Transaction Code
- 		public async Task<TaskView> Add(TaskAdd add)
+    
+      public async Task<data.Task> Add( TaskAdd add)
         {
-        	try
+            try
             {
-	            using (var db = new data.())
-	            {
-	                var result= await Add(db,add);
-	                await db.SaveChangesAsync();
-	                return (TaskView)result;
-	            }
-	        }
+
+                var newTask=new data.Task();
+	    		newTask.CompletedDate = add.CompletedDate;   	
+	    		newTask.DueDate = add.DueDate;   	
+	    		newTask.Name = add.Name;   	
+	    		newTask.StartedDate = add.StartedDate;   	
+	    		newTask.Status = add.Status;   	
+                
+                newTask.TaskId = await data.Sequence.SequenceGenerator.GetNextId("Task");
+                newTask.RowKey = newTask.TaskId.ToString();  
+		    	newTask.UserUserId = add.UserUserId;
+		    	newTask.PartitionKey = add.UserUserId.ToString();
+                TableOperation insertOperation = TableOperation.Insert(newTask);
+                var taskTable = await data.Utils.GetTable("Task");
+                await taskTable.ExecuteAsync(insertOperation);
+                return newTask;
+            }
+
             catch (Exception e)
             {
-            	LogFactory.GetLogger().Log(LogLevel.Error,e);
+                LogFactory.GetLogger().Log(LogLevel.Error, e);
                 return null;
-              
-            } 
-        } 	
- 	
- 	
- 	 public async Task<data.Task> Add(data. db, TaskAdd add)
-        {
-         try
-            {
-            
-               var newTask=new data.Task();
-	    	newTask.CompletedDate = add.CompletedDate;   	
-	    	newTask.DueDate = add.DueDate;   	
-	    	newTask.Name = add.Name;   	
-	    	newTask.StartedDate = add.StartedDate;   	
-	    	newTask.Status = add.Status;   	
-    	
-    		// Add references to parent Classes
-    			var userLookup = await db.Users.FirstOrDefaultAsync(w => w.UserId == add.UserUserId);   
-				if (userLookup !=null)    
-				{ newTask.User=userLookup;}	
-    	
-    	
-    		db.Tasks.Add(newTask);
-    		
-    		return newTask;
-            }
-            
-             catch (Exception e)
-            {
-            	LogFactory.GetLogger().Log(LogLevel.Error,e);
-                return null;
-              
+
             }
         }
-
-
-
-// Update Transaction Code
- 		public async Task<TaskView> Update(TaskUpdate update)
-        {
-        	try
-            {
-	            using (var db = new data.())
-	            {
-	                var result= await Update(db,update);
-	                await db.SaveChangesAsync();
-	                return (TaskView)result;
-	            }
-            }
-            catch (Exception e)
-            {
-            	LogFactory.GetLogger().Log(LogLevel.Error,e);
-                return null;
-              
-            } 
-        } 	
  	
  	
- 	 public async Task<data.Task> Update(data. db, TaskUpdate update)
-        {
+ 	
+
+
+
+
+ 	
+ 	 public async Task<data.Task> Update(TaskUpdate update)
+     {
          try
-            {
-              var taskToUpdate = await db.Tasks.FirstOrDefaultAsync(w => w.TaskId == update.TaskId);
+         {
+            
+             TableOperation retrieveOperation = TableOperation.Retrieve<data.Task>("root", update.TaskId.ToString());
 
-               
+             var taskIdTable = await data.Utils.GetTable("Task");
+
+             var result = await taskIdTable.ExecuteAsync(retrieveOperation);
+
+             if (result.Result != null)
+             {
+				var taskToUpdate = (data.Task) result.Result;	
+                taskToUpdate.CompletedDate = update.CompletedDate;   	
+                taskToUpdate.DueDate = update.DueDate;   	
+                taskToUpdate.Name = update.Name;   	
+                taskToUpdate.StartedDate = update.StartedDate;   	
+                taskToUpdate.Status = update.Status;   	
+                taskToUpdate.TaskId = update.TaskId;   	
             	
-taskToUpdate.CompletedDate = update.CompletedDate;   	
-taskToUpdate.DueDate = update.DueDate;   	
-taskToUpdate.Name = update.Name;   	
-taskToUpdate.StartedDate = update.StartedDate;   	
-taskToUpdate.Status = update.Status;   	
-taskToUpdate.TaskId = update.TaskId;   	
-            	
-    	
+    			 TableOperation updateOperation = TableOperation.Replace(taskToUpdate);
+
+                 // Execute the operation.
+                 await taskIdTable.ExecuteAsync(updateOperation);
     		
     		
-    		return taskToUpdate;
+    			return taskToUpdate;
+            	}
             }
             
              catch (Exception e)
             {
             	LogFactory.GetLogger().Log(LogLevel.Error,e);
-                return null;
+               
               
             }
+             return null;
         }
 
 
 	// Delete Transaction Code
- 		public async Task Delete(TaskDelete delete)
-        {
-        	try
-            {
-	            using (var db = new data.())
-	            {
-	                await Delete(db,delete);
-	                await db.SaveChangesAsync();	                
-	            }
-            }
-            catch (Exception e)
-            {
-            	LogFactory.GetLogger().Log(LogLevel.Error,e);
-               
-              
-            } 
-        } 	
  	
- 	
- 	 public async Task Delete(data. db, TaskDelete delete)
-        {
+ 	 public async Task Delete( TaskDelete delete)
+     {
          try
-            {
-            
-              var taskToDelete = await db.Tasks.FirstOrDefaultAsync(w => w.TaskId == delete.TaskId);
-            
-             	db.Tasks.Remove(taskToDelete);    		
+         {
+            	TableOperation retrieveOperation = TableOperation.Retrieve<data.Task>("root", delete.TaskId.ToString());
+
+                var taskTable = await data.Utils.GetTable("Task");
+
+                var result = await taskTable.ExecuteAsync(retrieveOperation);
+
+                if (result.Result != null)
+                {
+                    var deleteEntity = (data.Task)result.Result;
+                    TableOperation deleteOperation = TableOperation.Delete(deleteEntity);
+
+                    // Execute the operation.
+                    await taskTable.ExecuteAsync(deleteOperation);
+                }
+             
     		}
              catch (Exception e)
             {

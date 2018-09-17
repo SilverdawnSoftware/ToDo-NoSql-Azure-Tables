@@ -76,7 +76,7 @@ import {TaskService} from "../../Task/Services/TaskService"
         this.userId =params['id'];
           if (this.userId>0) {
         	this.userService.get(+params['id']).then(user => this.displayUser(user));
-  			 //this.taskService.getTasksByUser(this.userId).then(value => this.taskrows=value); 
+  			 this.taskService.getTasksByUser(this.userId).then(value => this.taskrows=value); 
       		}
       	});
       	
