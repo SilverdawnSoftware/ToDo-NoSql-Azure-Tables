@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ToDoMobile.ViewModels;
-using ToDoMobile.Views.Task;
-using ToDoMobile.Views.User;
+using Database.Mobile.ViewModels;
+using Database.Mobile.Views.User;
+
 
 using Xamarin.Forms;
 

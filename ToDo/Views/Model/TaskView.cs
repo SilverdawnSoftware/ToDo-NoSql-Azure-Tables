@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-4183B793CB6E8FE29032F13BC273743F
+// ALLOWOVERWRITE-C3B068C87CF7C6EAA53072CDBE8AF2F2
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 
 
-namespace ToDo.Views.Model
+namespace ToDo.Database.Views.Model
 {
 
     public class TaskView
@@ -23,7 +23,7 @@ namespace ToDo.Views.Model
 	    	
 	    	
 	    	/// <summary>
-            /// When the task needs to be completed by
+            /// 
             /// </summary>
 	    	public DateTime  DueDate  { get; set; } 	    	
 	    	

@@ -1,8 +1,10 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: ` <router-outlet></router-outlet>
-  <router-outlet name="popup"></router-outlet>`,
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {  }
+export class AppComponent {
+  title = 'ToDoWebClient';
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
-             x:Class="ToDoMobile.Views.Task.TaskIndexPage" Title="Task">
+             xmlns:viewModels="clr-namespace:Database.Mobile.ViewModels"
+             x:Class="Database.Mobile.Views.Task.TaskIndexPage" Title="Task">
              
    <ContentPage.BindingContext>
     <viewModels:TaskIndexViewModel/>
@@ -43,4 +43,4 @@
      <Button Margin="10" WidthRequest="100"  Text="Add Task"  BackgroundColor="CornflowerBlue" TextColor="White"  Command="{Binding AddTaskCommand}"></Button>
   </StackLayout>
 </ContentPage>
-<!-- ALLOWOVERWRITE-F79FEAD23DB3DC0875D8674D9493BBAC -->
+<!-- ALLOWOVERWRITE-FF3A7E488C39FB4C85E371527F94751A -->

@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Silverdawn.Exceptions\Silverdawn.Exceptions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+
 </Project>

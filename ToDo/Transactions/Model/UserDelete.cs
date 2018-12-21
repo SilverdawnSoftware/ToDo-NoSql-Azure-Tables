@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-8B3AA628994D8E5C126BE0BAC2BE0DD6
+// ALLOWOVERWRITE-BDD0DC109015E448BB7E1782D81625F9
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 
 
-namespace ToDo.Transactions.Model
+namespace ToDo.Database.Transactions.Model
 {
     public class UserDelete
     {

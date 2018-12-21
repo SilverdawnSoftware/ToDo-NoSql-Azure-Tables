@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoRestAPI", "ToDoRestAPI\ToDoRestAPI.csproj", "{C4CFF448-08F8-4537-AFCA-D1226E595033}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo", "ToDo\ToDo.csproj", "{EA7C2558-4F74-41ED-9B29-F64DA2E19F48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Database", "ToDo\ToDo.Database.csproj", "{EA7C2558-4F74-41ED-9B29-F64DA2E19F48}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToDoWebClient", "ToDoWebClient\", "{B2CDBC06-FE4C-4643-AB76-F38D117778B9}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -218,7 +218,6 @@ Global
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|x64.Build.0 = Debug|Any CPU
 		{B2CDBC06-FE4C-4643-AB76-F38D117778B9}.Debug|x86.ActiveCfg = Debug|Any CPU

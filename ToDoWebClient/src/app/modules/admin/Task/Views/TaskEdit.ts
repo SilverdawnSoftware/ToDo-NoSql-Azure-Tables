@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-195F16E3864DC6DD296E7D2CB5503FFC
+// ALLOWOVERWRITE-51E5C352D3FEBC9861A4FEA85DAF7536
 
 import { Component,OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
@@ -62,7 +62,7 @@ import {TaskService} from "../Services/TaskService";
        this.route.params.subscribe(params => {
         this.taskId =params['id'];
           if (this.taskId>0) {
-        	this.taskService.get(+params['id']).then(task => this.displayTask(task));
+        	this.taskService.get(+params['id']).subscribe(task => this.displayTask(task));
       		}
       	});
       	
@@ -80,12 +80,12 @@ import {TaskService} from "../Services/TaskService";
           const taskModel = this.taskForm.value;
           if (this.taskId>0)
           {
-            this.taskService.update(this.taskId,taskModel).then(value => this.displayTask(value));
+            this.taskService.update(this.taskId,taskModel).subscribe(value => this.displayTask(value));
           }
           else
           {
       		  taskModel.userUserId=this.userUserId;
-              this.taskService.add(taskModel).then(value => this.router.navigateByUrl("/admin/task/edit/"+value.taskId));
+              this.taskService.add(taskModel).subscribe(value => this.router.navigateByUrl("/admin/task/edit/"+value.taskId));
           }
       }
 

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-CD8B66F3A764F8B813355E47F99074C2
+// ALLOWOVERWRITE-277AE7DD6A192B0C205BFDF4CD47F8A9
 
 using System;
 using System.Collections.Generic;
@@ -6,18 +6,18 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-using ToDo.Views.Model;
-using ToDo.Views;
-using ToDoMobile.ViewModels;
+using Database.Views.Model;
+using Database.Views;
+using Database.Mobile.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ToDoMobile.Views.Task
+namespace Database.Mobile.Views.Task
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TaskIndexPage : ContentPage
     {
-        public ObservableCollection<ToDo.Views.Model.TaskView> Items { get; set; }=new ObservableCollection<TaskView>();
+        public ObservableCollection<TaskView> Items { get; set; }=new ObservableCollection<TaskView>();
 
         public TaskIndexPage()
         {

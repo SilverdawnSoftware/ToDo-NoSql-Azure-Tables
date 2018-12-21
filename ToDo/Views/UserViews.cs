@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-8A2A944796383A2A5CB14477372AC89C
+// ALLOWOVERWRITE-C5D6BDB9A243616A4590BA4D9F8A27F2
 
 using System;
 using System.Collections.Generic;
@@ -7,10 +7,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage.Table;
 using Silverdawn.Exceptions;
-using ToDo.Views.Model;
-using ToDo.Database;
+using ToDo.Database.Views.Model;
 
-namespace ToDo.Views
+
+namespace ToDo.Database.Views
 {
     public partial class UserViews
     {

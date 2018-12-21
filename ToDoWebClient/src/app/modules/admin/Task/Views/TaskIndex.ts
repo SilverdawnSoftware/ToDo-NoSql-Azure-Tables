@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-667D2A8B4AC3CBA8F5CB2831C8F31B43
+// ALLOWOVERWRITE-4AA414865812A8C114246F2D1E89E134
 
 import {Component, OnInit} from '@angular/core';
 import {TaskService} from '../Services/TaskService';
@@ -23,14 +23,14 @@ export class TaskIndex implements OnInit{
 
   ngOnInit() {
 
-    this.taskService.getAll().then(value => this.rows=value);
+    this.taskService.getAll().subscribe(value => this.rows=value);
   }
 
   delete(taskId: number)
   {
     if (confirm('Are you sure you want to delete this?'))
     {
-      this.taskService.remove(taskId).then();
+      this.taskService.remove(taskId).subscribe();
 
       for(var i = this.rows.length - 1; i >= 0; i--) {
         if(this.rows[i].taskId === taskId) {

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-3E9948BC161A59D7479184CA077B5B6C
+// ALLOWOVERWRITE-74EA90030308A11B8D9890091E13E5FF
 
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../Services/UserService';
@@ -23,14 +23,14 @@ export class UserIndex implements OnInit{
 
   ngOnInit() {
 
-    this.userService.getAll().then(value => this.rows=value);
+    this.userService.getAll().subscribe(value => this.rows=value);
   }
 
   delete(userId: number)
   {
     if (confirm('Are you sure you want to delete this?'))
     {
-      this.userService.remove(userId).then();
+      this.userService.remove(userId).subscribe();
 
       for(var i = this.rows.length - 1; i >= 0; i--) {
         if(this.rows[i].userId === userId) {

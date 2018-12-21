@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-BE629285CD227F02535A9E3DA5467E47
+// ALLOWOVERWRITE-8B7867E5626AE1502649A0A16BBD541F
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace ToDo.Transactions.Model
+namespace Database.Transactions.Model
 {
 
 	[DataContract]
@@ -21,7 +21,7 @@ namespace ToDo.Transactions.Model
 	    		public DateTime CompletedDate  { get; set; } 
 	    		
 	    		 /// <summary>
-                  /// When the task needs to be completed by
+                  /// 
                   /// </summary>
 				[DataMember(Name = "dueDate")]                
 	    		public DateTime DueDate  { get; set; } 

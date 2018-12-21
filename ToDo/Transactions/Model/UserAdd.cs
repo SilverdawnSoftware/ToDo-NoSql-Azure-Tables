@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-31F3E6134E5FB82BFF823520799E3D0F
+// ALLOWOVERWRITE-8C54B4B596B7AE667A88E6BC588DAAB6
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using ToDo.Database;
 
 
-namespace ToDo.Transactions.Model
+namespace ToDo.Database.Transactions.Model
 {
     public class UserAdd
     {

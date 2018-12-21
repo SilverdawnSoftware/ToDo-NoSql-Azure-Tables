@@ -1,19 +1,19 @@
-// ALLOWOVERWRITE-C8E7B9D9A5C45CC3048DFA24B5295901
+// ALLOWOVERWRITE-902B3E3BE141E3BAA260C9DE8D6AF4E8
 
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ToDo.Transactions;
-using ToDo.Transactions.Model;
-using ToDo.Views;
-using ToDo.Views.Model;
-using ToDoMobile.Annotations;
-using ToDoMobile.Views.User;
+using Database.Transactions;
+using Database.Transactions.Model;
+using Database.Views;
+using Database.Views.Model;
+using Database.Mobile.Annotations;
+
 using Xamarin.Forms;
 
-namespace ToDoMobile.ViewModels
+namespace Database.Mobile.ViewModels
 {
 
     public class TaskEditViewModel : INotifyPropertyChanged
@@ -126,7 +126,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.CompletedDate;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -146,7 +146,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.DueDate;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -166,7 +166,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.Name;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -186,7 +186,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.StartedDate;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -206,7 +206,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.Status;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -226,7 +226,7 @@ namespace ToDoMobile.ViewModels
             {
                 return TaskView.TaskId;
             } 
-        } 	    	
+         } 	    	
 	    	
 	    	
     	
@@ -289,12 +289,12 @@ namespace ToDoMobile.ViewModels
     	{
        	    var result=new TaskEditViewModel();
     	 
-			 result.CompletedDate = item.CompletedDate;
-			 result.DueDate = item.DueDate;
-			 result.Name = item.Name;
-			 result.StartedDate = item.StartedDate;
-			 result.Status = item.Status;
-			 result.TaskId = item.TaskId;
+			result.CompletedDate = item.CompletedDate;
+			result.DueDate = item.DueDate;
+			result.Name = item.Name;
+			result.StartedDate = item.StartedDate;
+			result.Status = item.Status;
+			result.TaskId = item.TaskId;
 	    	
         	return result;
        }

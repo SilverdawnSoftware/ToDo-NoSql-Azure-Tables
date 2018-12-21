@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentAssertions;
-using ToDo.Transactions;
-using ToDo.Transactions.Model;
-using ToDo.Views;
+using ToDo.Database.Transactions;
+using ToDo.Database.Transactions.Model;
+using ToDo.Database.Views;
+
 using Xunit;
 
 namespace ToDo.Tests

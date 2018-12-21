@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-shell',
-  templateUrl: 'app/modules/shell/appshell.html',
+  templateUrl: './appshell.html',
 
 })
 export class AppShell {}

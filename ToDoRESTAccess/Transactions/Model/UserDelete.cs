@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-B0C404DCEF67036FA10B14EDB3EF7B10
+// ALLOWOVERWRITE-11212055BCDB221E211359988B5D7AE6
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 
 
-namespace ToDo.Transactions.Model
+namespace Database.Transactions.Model
 {
 	[DataContract]
     public class UserDelete

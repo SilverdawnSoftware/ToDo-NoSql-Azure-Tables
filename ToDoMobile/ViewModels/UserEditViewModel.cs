@@ -1,19 +1,19 @@
-// ALLOWOVERWRITE-C95DB1B45E2C0B5F0B966EC42732D936
+// ALLOWOVERWRITE-B6C3A18F31D9795964F9AB35F60D4F2F
 
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ToDo.Transactions;
-using ToDo.Transactions.Model;
-using ToDo.Views;
-using ToDo.Views.Model;
-using ToDoMobile.Annotations;
-using ToDoMobile.Views.User;
+using Database.Transactions;
+using Database.Transactions.Model;
+using Database.Views;
+using Database.Views.Model;
+using Database.Mobile.Annotations;
+
 using Xamarin.Forms;
 
-namespace ToDoMobile.ViewModels
+namespace Database.Mobile.ViewModels
 {
 
     public class UserEditViewModel : INotifyPropertyChanged
@@ -149,7 +149,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.AddressLine1;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -169,7 +169,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.AddressLine2;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -189,7 +189,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.City;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -209,7 +209,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Company;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -229,7 +229,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Country;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -249,7 +249,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Department;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -269,7 +269,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Email;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -289,7 +289,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.FirstName;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -309,7 +309,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.HomeNumber;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -329,7 +329,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.MobileNumber;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -349,7 +349,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Postcode;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -369,7 +369,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Surname;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -389,7 +389,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.Title;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -409,7 +409,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.UserId;
             } 
-        } 	    	
+         } 	    	
 	    	
        	 
         /// <summary>
@@ -429,7 +429,7 @@ namespace ToDoMobile.ViewModels
             {
                 return UserView.WorkNumber;
             } 
-        } 	    	
+         } 	    	
 	    	
 	    	
 	    	
@@ -488,21 +488,21 @@ namespace ToDoMobile.ViewModels
     	{
        	    var result=new UserEditViewModel();
     	 
-			 result.AddressLine1 = item.AddressLine1;
-			 result.AddressLine2 = item.AddressLine2;
-			 result.City = item.City;
-			 result.Company = item.Company;
-			 result.Country = item.Country;
-			 result.Department = item.Department;
-			 result.Email = item.Email;
-			 result.FirstName = item.FirstName;
-			 result.HomeNumber = item.HomeNumber;
-			 result.MobileNumber = item.MobileNumber;
-			 result.Postcode = item.Postcode;
-			 result.Surname = item.Surname;
-			 result.Title = item.Title;
-			 result.UserId = item.UserId;
-			 result.WorkNumber = item.WorkNumber;
+			result.AddressLine1 = item.AddressLine1;
+			result.AddressLine2 = item.AddressLine2;
+			result.City = item.City;
+			result.Company = item.Company;
+			result.Country = item.Country;
+			result.Department = item.Department;
+			result.Email = item.Email;
+			result.FirstName = item.FirstName;
+			result.HomeNumber = item.HomeNumber;
+			result.MobileNumber = item.MobileNumber;
+			result.Postcode = item.Postcode;
+			result.Surname = item.Surname;
+			result.Title = item.Title;
+			result.UserId = item.UserId;
+			result.WorkNumber = item.WorkNumber;
 	    	
         	return result;
        }

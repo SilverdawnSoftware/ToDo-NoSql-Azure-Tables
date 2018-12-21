@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-403196B8DC599B9E2E315FB449004CA7
+// ALLOWOVERWRITE-3E6FFCF8FA643D5D4C4D485144540070
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 
 
-namespace ToDo.Views.Model
+namespace Database.Views.Model
 {
 
 	[DataContract]

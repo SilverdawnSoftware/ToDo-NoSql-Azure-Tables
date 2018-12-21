@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-A607273A128905326B5A4121D80DE959
+// ALLOWOVERWRITE-89EEEAADF45CB063BB10B69155257011
 
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Silverdawn.Exceptions;
-using ToDo.Views.Model;
+using Database.Views.Model;
 
 
-namespace ToDo.Views
+namespace Database.Views
 {
     public partial class UserViews
     {

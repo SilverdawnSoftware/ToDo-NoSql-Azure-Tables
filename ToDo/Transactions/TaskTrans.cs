@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-773922FCAE096FBF01F2020EAA082B23
+// ALLOWOVERWRITE-6F1A5576C7AAC86734FC3BAE0D9FC6F5
 
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Silverdawn.Exceptions;
 using Microsoft.WindowsAzure.Storage.Table;
-using ToDo.Transactions.Model;
-using ToDo.Views.Model;
+using ToDo.Database.Transactions.Model;
+using ToDo.Database.Views.Model;
 using data = ToDo.Database;
 
-namespace ToDo.Transactions
+namespace ToDo.Database.Transactions
 {
  public partial class TaskTransactions
  {
@@ -97,7 +97,7 @@ namespace ToDo.Transactions
 
 	// Delete Transaction Code
  	
- 	 public async Task Delete( TaskDelete delete)
+ 	 public async System.Threading.Tasks.Task Delete( TaskDelete delete)
      {
          try
          {

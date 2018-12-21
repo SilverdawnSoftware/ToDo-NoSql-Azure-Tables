@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
-             x:Class="ToDoMobile.Views.User.UserIndexPage" Title="User">
+             xmlns:viewModels="clr-namespace:Database.Mobile.ViewModels"
+             x:Class="Database.Mobile.Views.User.UserIndexPage" Title="User">
              
    <ContentPage.BindingContext>
     <viewModels:UserIndexViewModel/>
@@ -52,4 +52,4 @@
      <Button Margin="10" WidthRequest="100"  Text="Add User"  BackgroundColor="CornflowerBlue" TextColor="White"  Command="{Binding AddUserCommand}"></Button>
   </StackLayout>
 </ContentPage>
-<!-- ALLOWOVERWRITE-52CB11D3F5BE9BEBABA8F14CC9EB8852 -->
+<!-- ALLOWOVERWRITE-01C0267251FC38F13BDEA01BA974EF45 -->

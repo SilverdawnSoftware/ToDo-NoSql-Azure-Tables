@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-CE1E438A75AA0962A56C3E8A25A6450E
+// ALLOWOVERWRITE-C1FCCBFAC5BE0A48AB3B305BD20FAECC
 
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Silverdawn.Exceptions;
-using ToDo.Transactions.Model;
-using ToDo.Views.Model;
+using Database.Transactions.Model;
+using Database.Views.Model;
 
-namespace ToDo.Transactions
+namespace Database.Transactions
 {
     public  class UserTransactions
     {

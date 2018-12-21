@@ -1,81 +1,89 @@
-// ALLOWOVERWRITE-328751262044EAC01FA5791CAF88A0AA
+// ALLOWOVERWRITE-C2345B952C81DC641B1D4CA5BB8DDB2A
 
 
 
 
 import {Injectable} from '@angular/core';
-import {RequestOptions, Request, RequestMethod, Headers, Http, Response} from '@angular/http';
+
+
+import {Observable,of} from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import {HttpClient} from '@angular/common/http';
 
 import {UserView} from '../Models/UserView';
-import {Observable} from 'rxjs/Observable';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
 export class UserService {
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
-
-
 
   baseURL: string='http://tododotnet.lan:9271';
 
-  getAll(): Promise<UserView[]> {
-    return this.http.get(this.baseURL + `/api/User/All`)
-      .toPromise()
-      .then(response => response.json() as UserView[])
-      .catch(this.handleError);
-  }
-  
-  
+ getAll(): Observable<UserView[]> {
+    return this.http.get<UserView[]>(this.baseURL + `/api/User/All`)
+      .pipe(
+        catchError(this.handleError('getUsers', [])));
+  }  
 	 	
-  	get(id: number | string): Promise<UserView> {
-     return this.http.get(this.baseURL + `/api/User/${id}`).toPromise()
-       .then(response => response.json() as UserView)
-       .catch(this.handleError);
- 	 }
+ 	get(id: number | string): Observable<UserView> {
+		return this.http.get<UserView>(this.baseURL + `/api/User/${id}`)
+      		.pipe(
+         		catchError(this.handleError<UserView>(`getuserId=${id}`)
+         	)
+   		);
+ 	}
+ 	 
+	add(user: UserView): Observable<UserView > {
+    	return this.http.post<UserView>(this.baseURL + '/api/User', user)
+      		.pipe(
+    			catchError(this.handleError<UserView>('addUser')
+    		)	
+    	);
+  	}
  	 
  	 
- 	 add(user: UserView): Promise<UserView> {
-    return this.http.post(this.baseURL + '/api/User', user)
-      .toPromise()
-      .then(response =>  response.json() as UserView)
-      .catch(this.handleError);
-  }
+ 	update(userId: number,  user: UserView): Observable<UserView > {
+    	return this.http.put<UserView >(this.baseURL + `/api/Entity/${userId}`, user)
+      		.pipe(
+        		catchError(this.handleError<UserView>('addUser')
+        	)
+      	);
+  	}
  	 
  	 
- 	 update(userId: number,  user: UserView): Promise<UserView> {
-    return this.http.put(this.baseURL + `/api/User/${userId}`, user)
-      .toPromise()
-      .then(response => response.json() as UserView)
-      .catch(this.handleError);
-  }
- 	 
- 	 remove(userId: number): Promise<any> {
-      return this.http.delete(this.baseURL + `/api/User/${userId}`).toPromise();
-  }
- 	 	 
- 	 
-  		
-  
- private handleError(error: Response | any) {
-    // In a real world app, you might use a remote logging infrastructure
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.error(errMsg);
-    return Observable.throw(errMsg);
-  }
-  
+ 	remove(userId: number): Observable<UserView > {
+     	return this.http.delete<UserView >(this.baseURL + `/api/User/${userId}`)
+        	.pipe(
+          		catchError(this.handleError<UserView>('addUser')
+          	)
+        );
+  	} 	  	 
+  		  		
+   
+   	
+	/**
+	* Handle Http operation that failed.
+	* Let the app continue.
+	* @param operation - name of the operation that failed
+	* @param result - optional value to return as the observable result
+	*/
+	private handleError<T> (operation = 'operation', result?: T) {
+		return (error: any): Observable<T> => {
+		
+		  // TODO: send the error to remote logging infrastructure
+		  console.error(error); // log to console instead
+		
+		  // TODO: better job of transforming error for user consumption
+		 // this.log(`${operation} failed: ${error.message}`);
+		
+		  // Let the app keep running by returning an empty result.
+		  return of(result as T);
+		};
+	}
+   
+
   }
 
     

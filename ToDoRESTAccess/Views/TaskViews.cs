@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-4AD34B007D35FEBE4898C15A9E959539
+// ALLOWOVERWRITE-58F7B032A393FC8B3ED7F9E70C069F21
 
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Silverdawn.Exceptions;
-using ToDo.Views.Model;
+using Database.Views.Model;
 
 
-namespace ToDo.Views
+namespace Database.Views
 {
     public partial class TaskViews
     {

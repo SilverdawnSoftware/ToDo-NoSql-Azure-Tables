@@ -1,4 +1,4 @@
-<!-- ALLOWOVERWRITE-2BA2671B83558743DDC865C217CB604E -->
+<!-- ALLOWOVERWRITE-9AD761A4EBD83A9A5D57E66568C9A43A -->
 
 
  <form [formGroup]="userForm" class="form-horizontal css-form" role="form" (ngSubmit)="update()">
@@ -180,10 +180,10 @@
             (page)="onPage($event)">
    						<ngx-datatable-column name="TaskId" width="300"></ngx-datatable-column> 
    						<ngx-datatable-column name="Name" width="300"></ngx-datatable-column> 
-   						<ngx-datatable-column name="DueDate" width="300"></ngx-datatable-column> 
    						<ngx-datatable-column name="StartedDate" width="300"></ngx-datatable-column> 
    						<ngx-datatable-column name="Status" width="300"></ngx-datatable-column> 
    						<ngx-datatable-column name="CompletedDate" width="300"></ngx-datatable-column> 
+   						<ngx-datatable-column name="DueDate" width="300"></ngx-datatable-column> 
    			<ngx-datatable-column name="Edit" width="300" prop="taskId">
       <ng-template let-value="value" ngx-datatable-cell-template>
       <button mat-icon-button	routerLink="/admin/task/edit/{{value}}" color="primary"><mat-icon>edit</mat-icon></button>

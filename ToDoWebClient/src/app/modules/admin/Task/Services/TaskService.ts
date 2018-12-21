@@ -1,89 +1,96 @@
-// ALLOWOVERWRITE-B19311B9BF85BBDD3C6244825E4E4C8B
+// ALLOWOVERWRITE-F6B971664346DD14880FC4ED0876BD4B
 
 
 
 
 import {Injectable} from '@angular/core';
-import {RequestOptions, Request, RequestMethod, Headers, Http, Response} from '@angular/http';
+
+
+import {Observable,of} from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
+import {HttpClient} from '@angular/common/http';
 
 import {TaskView} from '../Models/TaskView';
-import {Observable} from 'rxjs/Observable';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
 export class TaskService {
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
-
-
 
   baseURL: string='http://tododotnet.lan:9271';
 
-  getAll(): Promise<TaskView[]> {
-    return this.http.get(this.baseURL + `/api/Task/All`)
-      .toPromise()
-      .then(response => response.json() as TaskView[])
-      .catch(this.handleError);
-  }
-  
-  
+ getAll(): Observable<TaskView[]> {
+    return this.http.get<TaskView[]>(this.baseURL + `/api/Task/All`)
+      .pipe(
+        catchError(this.handleError('getTasks', [])));
+  }  
 	 	
-  	get(id: number | string): Promise<TaskView> {
-     return this.http.get(this.baseURL + `/api/Task/${id}`).toPromise()
-       .then(response => response.json() as TaskView)
-       .catch(this.handleError);
- 	 }
+ 	get(id: number | string): Observable<TaskView> {
+		return this.http.get<TaskView>(this.baseURL + `/api/Task/${id}`)
+      		.pipe(
+         		catchError(this.handleError<TaskView>(`gettaskId=${id}`)
+         	)
+   		);
+ 	}
+ 	 
+	add(task: TaskView): Observable<TaskView > {
+    	return this.http.post<TaskView>(this.baseURL + '/api/Task', task)
+      		.pipe(
+    			catchError(this.handleError<TaskView>('addTask')
+    		)	
+    	);
+  	}
  	 
  	 
- 	 add(task: TaskView): Promise<TaskView> {
-    return this.http.post(this.baseURL + '/api/Task', task)
-      .toPromise()
-      .then(response =>  response.json() as TaskView)
-      .catch(this.handleError);
-  }
+ 	update(taskId: number,  task: TaskView): Observable<TaskView > {
+    	return this.http.put<TaskView >(this.baseURL + `/api/Entity/${taskId}`, task)
+      		.pipe(
+        		catchError(this.handleError<TaskView>('addTask')
+        	)
+      	);
+  	}
  	 
  	 
- 	 update(taskId: number,  task: TaskView): Promise<TaskView> {
-    return this.http.put(this.baseURL + `/api/Task/${taskId}`, task)
-      .toPromise()
-      .then(response => response.json() as TaskView)
-      .catch(this.handleError);
-  }
- 	 
- 	 remove(taskId: number): Promise<any> {
-      return this.http.delete(this.baseURL + `/api/Task/${taskId}`).toPromise();
-  }
- 	 	 
- 	 
-  		
+ 	remove(taskId: number): Observable<TaskView > {
+     	return this.http.delete<TaskView >(this.baseURL + `/api/Task/${taskId}`)
+        	.pipe(
+          		catchError(this.handleError<TaskView>('addTask')
+          	)
+        );
+  	} 	  	 
+  		  		
 		    	
-		    	getTasksByUser(userId: number): Promise<TaskView[]> {
-    return this.http.get(this.baseURL + `/api/User/${userId}/Tasks`)
-      .toPromise()
-      .then(response => response.json() as TaskView[])
-      .catch(this.handleError);
+		    	getTasksByUser(userId: number): Observable<TaskView[]> {
+    return this.http.get<TaskView[]>(this.baseURL + `/api/User/${userId}/Tasks`)
+     .pipe(
+        catchError(this.handleError('getTasksByUser', [])));
   }
 		    	
-  
- private handleError(error: Response | any) {
-    // In a real world app, you might use a remote logging infrastructure
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.error(errMsg);
-    return Observable.throw(errMsg);
-  }
-  
+   
+   	
+	/**
+	* Handle Http operation that failed.
+	* Let the app continue.
+	* @param operation - name of the operation that failed
+	* @param result - optional value to return as the observable result
+	*/
+	private handleError<T> (operation = 'operation', result?: T) {
+		return (error: any): Observable<T> => {
+		
+		  // TODO: send the error to remote logging infrastructure
+		  console.error(error); // log to console instead
+		
+		  // TODO: better job of transforming error for user consumption
+		 // this.log(`${operation} failed: ${error.message}`);
+		
+		  // Let the app keep running by returning an empty result.
+		  return of(result as T);
+		};
+	}
+   
+
   }
 
     

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-851E67B226A109C4F0579505047FBB10
+// ALLOWOVERWRITE-763C6BD9320D8994DE0A0709042D515B
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 
 
-namespace ToDo.Views.Model
+namespace ToDo.Database.Views.Model
 {
 
     public class UserView

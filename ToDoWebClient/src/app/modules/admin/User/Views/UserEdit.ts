@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-5F19E552142718AFD6275E206E00F769
+// ALLOWOVERWRITE-4012998D2DD06B2296BB4C73573707AA
 
 import { Component,OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
@@ -75,8 +75,8 @@ import {TaskService} from "../../Task/Services/TaskService"
        this.route.params.subscribe(params => {
         this.userId =params['id'];
           if (this.userId>0) {
-        	this.userService.get(+params['id']).then(user => this.displayUser(user));
-  			 this.taskService.getTasksByUser(this.userId).then(value => this.taskrows=value); 
+        	this.userService.get(+params['id']).subscribe(user => this.displayUser(user));
+  			 this.taskService.getTasksByUser(this.userId).subscribe(value => this.taskrows=value); 
       		}
       	});
       	
@@ -89,11 +89,11 @@ import {TaskService} from "../../Task/Services/TaskService"
           const userModel = this.userForm.value;
           if (this.userId>0)
           {
-            this.userService.update(this.userId,userModel).then(value => this.displayUser(value));
+            this.userService.update(this.userId,userModel).subscribe(value => this.displayUser(value));
           }
           else
           {
-              this.userService.add(userModel).then(value => this.router.navigateByUrl("/admin/user/edit/"+value.userId));
+              this.userService.add(userModel).subscribe(value => this.router.navigateByUrl("/admin/user/edit/"+value.userId));
           }
       }
 
@@ -107,7 +107,7 @@ import {TaskService} from "../../Task/Services/TaskService"
   	{
 	    if (confirm('Are you sure you want to delete this?'))
 	    {
-	      this.taskService.remove(taskId).then();
+	      this.taskService.remove(taskId).subscribe();
 	
 	      for(var i = this.taskrows.length - 1; i >= 0; i--) {
 	        if(this.taskrows[i].taskId === taskId) {

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-7F253265369926B42593342A3DC8134B
+// ALLOWOVERWRITE-5C6AE323B108EFA616C0BB5A659699AD
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using ToDo.Database;
 
 
-namespace ToDo.Transactions.Model
+namespace ToDo.Database.Transactions.Model
 {
     public class TaskAdd
     {
@@ -17,7 +17,7 @@ namespace ToDo.Transactions.Model
 	    		public DateTime CompletedDate  { get; set; } 
 	    		
 	    		 /// <summary>
-                  /// When the task needs to be completed by
+                  /// 
                   /// </summary>	    		
 	    		public DateTime DueDate  { get; set; } 
 	    		

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-21DC6FC8DE8E3AF0029E21A1BD0572CC
+// ALLOWOVERWRITE-E9F593B9A72ECF4643FA21658563B53F
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace ToDo.Transactions.Model
+namespace Database.Transactions.Model
 {
 
 	[DataContract]

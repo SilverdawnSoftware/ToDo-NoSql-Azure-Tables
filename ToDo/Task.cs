@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-93ADA8E00500384088251F6C7CC60C86
+// ALLOWOVERWRITE-2D1067DA6302C9C3E18127AAF8DC0A36
 
 using System;
 using System.Collections.Generic;
@@ -18,9 +18,6 @@ namespace ToDo.Database
 	    /// <summary> The name of the task to be done </summary>	 
 	    public string Name  { get; set; }     	
 	    		
-	    /// <summary> When the task needs to be completed by </summary>	 
-	    public DateTime DueDate  { get; set; }     	
-	    		
 	    /// <summary> When the task was started </summary>	 
 	    public DateTime StartedDate  { get; set; }     	
 	    		
@@ -29,6 +26,9 @@ namespace ToDo.Database
 	    		
 	    /// <summary> The data the task was completed </summary>	 
 	    public DateTime CompletedDate  { get; set; }     	
+	    		
+	    /// <summary>  </summary>	 
+	    public DateTime DueDate  { get; set; }     	
     	
     	
     	

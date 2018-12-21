@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-70B09B3334BAEFBE47766F106E81099D
+// ALLOWOVERWRITE-D919CF7E6C4546B4DF98C64D46719515
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 
 
-namespace ToDo.Transactions.Model
+namespace Database.Transactions.Model
 {
 	[DataContract]
     public class UserUpdate

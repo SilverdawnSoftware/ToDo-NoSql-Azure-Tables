@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-9655DD42ED6A95BBBEC9E981B71A2C58
+// ALLOWOVERWRITE-F4827669FC880510BF25541272BEF83E
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 
 
-namespace ToDo.Transactions.Model
+namespace ToDo.Database.Transactions.Model
 {
     public class TaskDelete
     {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:ToDoMobile.ViewModels;assembly=ToDoMobile"
-             x:Class="ToDoMobile.Views.Task.TaskEditPage" Title="Task List">
+             xmlns:viewModels="clr-namespace:Database.Mobile.ViewModels"
+             x:Class="Database.Mobile.Views.Task.TaskEditPage" Title="Task List">
     <ContentPage.BindingContext>
         <viewModels:TaskEditViewModel/>
     </ContentPage.BindingContext>
@@ -61,4 +61,4 @@
       
     </ContentPage.Content>
 </ContentPage>
-<!-- ALLOWOVERWRITE-121F1C414EF8A19EE2ABE8CD90DF9810 -->
+<!-- ALLOWOVERWRITE-A4B3097DF3712CFF34CD68E4E1C21225 -->

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-3484B0854F63288077514FD0AA23E275
+// ALLOWOVERWRITE-7119BD6B71D37803621FBE50172FFBB3
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +10,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AdminRoutingModule } from "./modules/admin/AdminRoutingModule";
 import {AppShell} from "./modules/shell/appshell";
 import {CdkTableModule} from '@angular/cdk/table';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatAutocompleteModule,
   MatButtonModule,
@@ -95,7 +96,7 @@ export class AppMaterialModule {}
 
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, HttpModule, AdminRoutingModule, AppMaterialModule,NgxDatatableModule,FlexLayoutModule],
+  imports: [BrowserModule, ReactiveFormsModule, BrowserAnimationsModule, HttpModule, AdminRoutingModule, AppMaterialModule,NgxDatatableModule,FlexLayoutModule,HttpClientModule],
   declarations: [AppShell 
   ,UserEdit,UserIndex
   ,TaskEdit,TaskIndex

@@ -1,4 +1,4 @@
-// ALLOWOVERWRITE-935BC2575ACB572BDD7AF31F2B7516B3
+// ALLOWOVERWRITE-21F147F0E7A7C03B2E4174E48440CD96
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 
 
-namespace ToDo.Transactions.Model
+namespace ToDo.Database.Transactions.Model
 {
     public class UserUpdate
     {
