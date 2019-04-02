@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Silverdawn.Exceptions\Silverdawn.Exceptions.csproj" />
+    <Folder Include="Database\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
+    <ProjectReference Include="..\Silverdawn.Exceptions\SilverdawnSoftware.Exceptions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -59,7 +59,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToDoDocumentation", "ToDoDo
 		SlnRelativePath = "ToDoDocumentation\"
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silverdawn.Exceptions", "Silverdawn.Exceptions\Silverdawn.Exceptions.csproj", "{F78646D4-74DB-4934-A73E-1F68B9514451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilverdawnSoftware.Exceptions", "Silverdawn.Exceptions\SilverdawnSoftware.Exceptions.csproj", "{F78646D4-74DB-4934-A73E-1F68B9514451}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Tests", "ToDo.Tests\ToDo.Tests.csproj", "{81E915F4-334C-4561-A759-2267525EB81F}"
 EndProject

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage.Table;
-using Silverdawn.Exceptions;
+using SilverdawnSoftware.Exceptions;
 
 namespace ToDo.Database
 {
